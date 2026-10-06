@@ -4,7 +4,7 @@ Session store based on connect-pg-simple written in typescript.
 ## How to Use
 This session store is intended as a drop-in replacement for connect-pg-simple. First set up a database similar to [https://github.com/voxpelli/node-connect-pg-simple/blob/main/table.sql](https://github.com/voxpelli/node-connect-pg-simple/blob/main/table.sql) with the following naming differences:
 
-* database name should be "sessions"
+* table name should be "sessions"
 * "sid" is now "session_id"
 * "sess" is now "session_data"
 * "expire" is now "expiration"
@@ -41,7 +41,7 @@ const poolOptions: PoolOptions = {
     user: 'your_user',
     port: 5432, //the port your database is running on, this is the default
     password: 'your_password',
-    database: 'sessions',
+    database: 'your_database_name',
     max: 20, //https://node-postgres.com/guides/pool-sizing
     maxUses: 0,
     idleTimeoutMillis: 30000,
